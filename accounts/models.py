@@ -5,12 +5,27 @@ from django.db.models.signals import post_save
 # Create your models here.
 
 
+class Company(models.Model):
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=255)
+    phone = models.CharField(max_length=50)
+    website = models.URLField(default='')
+    contact = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     description = models.CharField(max_length=100, default='')
     city = models.CharField(max_length=100, default='')
     website = models.URLField(default='')
     phone = models.IntegerField(default=0)
+    company = models.ForeignKey(Company, null=True)
+
+    #def __str__(self):
+        #return self.name
 
     def create_profile(sender, **kwargs):
         if kwargs['created']:
