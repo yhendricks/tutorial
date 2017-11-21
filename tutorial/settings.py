@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -128,7 +129,8 @@ LOGIN_URL = '/account/login/'
 LOGIN_EXEMPT_URLS = (
     r'account/logout/$',
     r'account/register/$',
-    r'account/reset-password/'
+    r'account/reset-password/',
+    r'home/',
 )
 
 MEDIA_URL = '/media/'
