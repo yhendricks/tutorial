@@ -23,6 +23,7 @@ class UserProfile(models.Model):
     website = models.URLField(default='')
     phone = models.IntegerField(default=0)
     #company = models.ForeignKey(Company, null=True)
+    image = models.ImageField(upload_to='profile_image', blank=True)
 
     def __str__(self):
         return self.user.username

@@ -131,5 +131,8 @@ LOGIN_EXEMPT_URLS = (
     r'account/reset-password/'
 )
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'tutorial/media')
+
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 

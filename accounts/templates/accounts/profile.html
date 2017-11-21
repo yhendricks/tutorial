@@ -15,5 +15,6 @@
         <p>Phone: {{ user.userprofile.phone }}</p>
         <p>City: {{ user.userprofile.city }}</p>
         <p>Website: <a href="{{ user.userprofile.website }}" target="_blank">{{ user.userprofile.website }}</a></p>
+        <img src="{{ user.userprofile.image.url }}" width="240" alt="">
     </div>
 {% endblock %}
