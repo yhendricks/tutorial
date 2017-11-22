@@ -20,8 +20,8 @@ from django.conf.urls.static import static
 from tutorial import views
 
 urlpatterns = [
-    url(r'^$', views.login_redirect, name='login_redirect'),
     url(r'^admin/', admin.site.urls),
     url(r'^home/', include('home.urls', namespace='home')),
     url(r'^account/', include('accounts.urls', namespace='accounts')),
+    url(r'^$', views.login_redirect, name='login_redirect'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
