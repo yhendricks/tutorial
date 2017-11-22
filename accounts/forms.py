@@ -39,3 +39,9 @@ class EditProfileForm(UserChangeForm):
             'last_name',
             'password'
         )
+
+    def __init__(self, *args, **kwargs):
+        super(EditProfileForm, self).__init__(*args, **kwargs)
+        self.fields['first_name'].widget = forms.TextInput(attrs={'size': 40,  'class': 'form-control' })
+        self.fields['email'].widget = forms.TextInput(attrs={'size': 40, 'class': 'form-control', 'placeholder': 'Enter you email address'})
+        self.fields['last_name'].widget = forms.TextInput(attrs={'size': 40, 'class': 'form-control'})
