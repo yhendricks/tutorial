@@ -39,4 +39,3 @@ class LoginRequiredMiddleware:
             return redirect(settings.LOGIN_URL)
 
 
-
